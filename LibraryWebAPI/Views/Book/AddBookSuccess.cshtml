@@ -1,0 +1,13 @@
+﻿<!-- Views/Book/AddBookSuccess.cshtml -->
+@{
+    ViewData["Title"] = "Add Book Success";
+}
+
+<h2>Add Book Success</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <div class="alert alert-success">
+        @ViewBag.SuccessMessage
+    </div>
+}

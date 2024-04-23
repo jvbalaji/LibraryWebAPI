@@ -1,0 +1,52 @@
+﻿<!-- Views/Home/Index.cshtml -->
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Library Management System</title>
+    <style>
+        h2 {
+            color: #333;
+            font-size: 24px;
+            font-weight: bold; /* Make the text bold */
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+            a:hover {
+                color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Library Management System</h2>
+        <ul>
+            <li><a asp-controller="Book" asp-action="ShowCatalog">Show Catalog</a></li>
+            <li><a asp-controller="Book" asp-action="Borrow">Borrow a Book</a></li>
+            <li><a asp-controller="Book" asp-action="Return">Return a Book</a></li>
+            <li><a asp-controller="Book" asp-action="AddBook">Add a New Book</a></li>
+            <li><a asp-controller="Book" asp-action="Delete">Delete a Book</a></li>
+        </ul>
+    </div>
+</body>
+</html>

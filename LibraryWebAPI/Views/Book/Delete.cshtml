@@ -1,0 +1,29 @@
+﻿<!-- Views/Book/Delete.cshtml -->
+@model IEnumerable<LibraryWebAPI.Models.Book>
+
+<h2>Delete a Book</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No books available to delete.</p>
+}
+else
+{
+    <form asp-controller="Book" asp-action="Delete" method="post">
+        <div class="form-group">
+            @foreach (var book in Model)
+            {
+                <div class="book-item">
+                    <label>
+                        <input type="checkbox" name="bookIds" value="@book.Id" />
+                        @book.Title by @book.Author (Year: @book.Year)
+                    </label>
+                </div>
+            }
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-danger">Delete Selected Books</button>
+        </div>
+    </form>
+}

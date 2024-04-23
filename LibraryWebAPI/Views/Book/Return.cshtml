@@ -1,0 +1,30 @@
+﻿<!-- Views/Book/Return.cshtml -->
+@model IEnumerable<LibraryWebAPI.Models.Book>
+
+<h2>Return a Borrowed Book</h2>
+
+
+@if (!Model.Any())
+{
+    <p>No books borrowed.</p>
+}
+else
+{
+    <form asp-controller="Book" asp-action="Return" method="post">
+        <div class="form-group">
+            @foreach (var book in Model)
+            {
+                <div class="book-item">
+                    <label>
+                        <input type="radio" name="bookId" value="@book.Id" />
+                        @book.Title by @book.Author (Borrower: @book.BorrowerName)
+                    </label>
+                </div>
+            }
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Return Selected Book</button>
+        </div>
+    </form>
+}
